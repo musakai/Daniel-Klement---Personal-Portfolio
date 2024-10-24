@@ -1,7 +1,7 @@
 ﻿namespace Daniel_Klement.Enums.Socials
 {
     /// <summary>
-    /// Tzpe of the social media
+    /// Type of the social media
     /// </summary>
     public enum SocialMedia
     {
