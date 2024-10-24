@@ -5,8 +5,15 @@
 </a>
 
 @code {
-    [Parameter] public required string Href { get; set; }
-    [Parameter] public required SocialMedia SocialMedia { get; set; }
+    /// <summary>
+    /// URI to the social media page
+    /// </summary>
+    [Parameter, EditorRequired] public required string Href { get; set; }
+
+    /// <summary>
+    /// Type of the social media
+    /// </summary>
+    [Parameter, EditorRequired] public required SocialMedia SocialMedia { get; set; }
 
     private string GetIconClass(SocialMedia icon)
     {
