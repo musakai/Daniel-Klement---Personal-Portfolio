@@ -1,0 +1,22 @@
+﻿@using Daniel_Klement.Enums.Socials
+
+<a href="@Href" target="_blank">
+    <i class="@GetIconClass(SocialMedia)"></i>
+</a>
+
+@code {
+    [Parameter] public required string Href { get; set; }
+    [Parameter] public required SocialMedia SocialMedia { get; set; }
+
+    private string GetIconClass(SocialMedia icon)
+    {
+        return icon switch
+        {
+            SocialMedia.Facebook => "fab fa-facebook-f",
+            SocialMedia.Twitter => "fab fa-twitter",
+            SocialMedia.Instagram => "fab fa-instagram",
+            SocialMedia.LinkedIn => "fab fa-linkedin-in",
+            _ => throw new ArgumentOutOfRangeException(nameof(icon), icon, null)
+        };
+    }
+}
