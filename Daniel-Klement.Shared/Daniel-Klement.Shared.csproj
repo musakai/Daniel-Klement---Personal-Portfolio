@@ -5,6 +5,10 @@
     <RootNamespace>Daniel_Klement.Shared</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <!-- Required documentation -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarningsAsErrors>CS1591</WarningsAsErrors>
   </PropertyGroup>
 
 </Project>
