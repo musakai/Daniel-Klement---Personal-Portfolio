@@ -1,7 +1,7 @@
 ﻿@using Daniel_Klement.Enums.Socials
 
 <a href="@Href" target="_blank">
-    <i class="@GetIconClass(SocialMedia)"></i>
+    <i class="@GetIconClass(SocialMediaType)"></i>
 </a>
 
 @code {
@@ -13,7 +13,7 @@
     /// <summary>
     /// Type of the social media
     /// </summary>
-    [Parameter, EditorRequired] public required SocialMedia SocialMedia { get; set; }
+    [Parameter, EditorRequired] public required SocialMedia SocialMediaType { get; set; }
 
     private string GetIconClass(SocialMedia icon)
     {
