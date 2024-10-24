@@ -1,39 +1,20 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Daniel-Klement.Blazor</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿@using Daniel_Klement.Blazor.Components.Links
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
+<nav>
+    <ul>
+        <li><NavLink href="/" Match="NavLinkMatch.All">Home</NavLink></li>
+        <li><NavLink href="/about">About</NavLink></li>
+        <li><NavLink href="/blog">Blog</NavLink></li>
+        <li><NavLink href="/contact">Contact</NavLink></li>
+    </ul>
+    <div>
+        <SocialMediaLink Href="https://www.facebook.com" Icon="fab fa-facebook-f" />
+        <SocialMediaLink Href="https://www.twitter.com" Icon="fab fa-twitter" />
+        <SocialMediaLink Href="https://www.instagram.com" Icon="fab fa-instagram" />
+        <SocialMediaLink Href="https://www.linkedin.com" Icon="fab fa-linkedin-in" />
+    </div>
+</nav>
 
 @code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
 }
