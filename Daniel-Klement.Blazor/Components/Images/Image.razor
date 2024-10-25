@@ -1,0 +1,88 @@
+﻿@using Daniel_Klement.Enums.Loading
+
+<img src="@Src"
+     alt="@Alt"
+     title="@Title"
+     width="@Width"
+     height="@Height"
+     loading="@Loading.ToString().ToLower()"
+     class="@Class"
+     style="@Style"
+     srcset="@SrcSet"
+     sizes="@Sizes"
+     usemap="@UseMap"
+     longdesc="@LongDesc" />
+
+@code {
+    /// <summary>
+    /// Source in URI format.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Src { get; set; }
+
+    /// <summary>
+    /// Alternative text for the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Alt { get; set; }
+
+    /// <summary>
+    /// Title of the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Title { get; set; }
+
+    /// <summary>
+    /// Width of the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Width { get; set; }
+
+    /// <summary>
+    /// Height of the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Height { get; set; }
+
+    /// <summary>
+    /// Loading type of the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required ImageLoading Loading { get; set; }
+
+    /// <summary>
+    /// CSS class for the image.
+    /// </summary>
+    [Parameter]
+    public string? Class { get; set; }
+
+    /// <summary>
+    /// Inline CSS style for the image.
+    /// </summary>
+    [Parameter]
+    public string? Style { get; set; }
+
+    /// <summary>
+    /// Source set of the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string SrcSet { get; set; }
+
+    /// <summary>
+    /// Sizes of the image.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Sizes { get; set; }
+
+    /// <summary>
+    /// Associates the image with an image map.
+    /// </summary>
+    [Parameter]
+    public string? UseMap { get; set; }
+
+    /// <summary>
+    /// URI to a detailed description of the image.
+    /// </summary>
+    [Parameter]
+    public string? LongDesc { get; set; }
+}

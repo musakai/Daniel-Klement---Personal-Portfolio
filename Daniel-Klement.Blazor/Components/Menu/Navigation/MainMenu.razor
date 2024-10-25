@@ -1,0 +1,20 @@
+﻿@using Daniel_Klement.Blazor.Components.Links
+
+<nav>
+    <ul>
+        <li><NavLink href="/" Match="NavLinkMatch.All">Home</NavLink></li>
+        <li><NavLink href="/about">About</NavLink></li>
+        <li><NavLink href="/blog">Blog</NavLink></li>
+        <li><NavLink href="/contact">Contact</NavLink></li>
+    </ul>
+    <div>
+        <SocialMediaLink Href="https://www.youtube.com" SocialMediaType="Enums.Socials.SocialMedia.YouTube" />
+        <SocialMediaLink Href="https://www.facebook.com" SocialMediaType="Enums.Socials.SocialMedia.Facebook" />
+        <SocialMediaLink Href="https://www.instagram.com" SocialMediaType="Enums.Socials.SocialMedia.Instagram" />
+        <SocialMediaLink Href="https://danielklement.superpatch.com" SocialMediaType="Enums.Socials.SocialMedia.SuperPatch" />
+    </div>
+</nav>
+
+@code {
+
+}
