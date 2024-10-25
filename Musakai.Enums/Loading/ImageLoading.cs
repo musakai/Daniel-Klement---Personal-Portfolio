@@ -1,4 +1,4 @@
-﻿namespace Daniel_Klement.Enums.Loading
+﻿namespace Musakai.Enums.Loading
 {
     /// <summary>
     /// Image Loading types.

@@ -1,4 +1,4 @@
-﻿namespace Daniel_Klement.Enums.Socials
+﻿namespace Musakai.Enums.Socials
 {
     /// <summary>
     /// Type of the social media

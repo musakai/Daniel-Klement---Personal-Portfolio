@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Daniel-Klement.Enums\Daniel-Klement.Enums.csproj" />
+    <ProjectReference Include="..\Musakai.Enums\Musakai.Enums.csproj" />
   </ItemGroup>
 
   <ItemGroup>

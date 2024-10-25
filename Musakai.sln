@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35209.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daniel-Klement.Blazor", "Daniel-Klement.Blazor\Daniel-Klement.Blazor.csproj", "{E2383717-A769-4A06-81D7-75EA29988911}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.Blazor", "Musakai.Blazor\Musakai.Blazor.csproj", "{E2383717-A769-4A06-81D7-75EA29988911}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daniel-Klement.Enums", "Daniel-Klement.Enums\Daniel-Klement.Enums.csproj", "{DEC3E062-13F7-4230-A08C-6E2F9D2C3058}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.Enums", "Musakai.Enums\Musakai.Enums.csproj", "{DEC3E062-13F7-4230-A08C-6E2F9D2C3058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daniel-Klement.Interfaces", "Daniel-Klement.Interfaces\Daniel-Klement.Interfaces.csproj", "{75425198-51EC-4115-87E4-C68D644D771D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.Interfaces", "Musakai.Interfaces\Musakai.Interfaces.csproj", "{75425198-51EC-4115-87E4-C68D644D771D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daniel-Klement.Shared", "Daniel-Klement.Shared\Daniel-Klement.Shared.csproj", "{8BE6EBFA-6A23-42E5-8FA7-9D67815FD435}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.Shared", "Musakai.Shared\Musakai.Shared.csproj", "{8BE6EBFA-6A23-42E5-8FA7-9D67815FD435}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
