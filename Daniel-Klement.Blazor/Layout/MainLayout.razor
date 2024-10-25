@@ -1,16 +1,12 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+@using Daniel_Klement.Blazor.Components.Menu.Navigation;
 
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
+<header class="top-row">
+    <Image Src="/" Alt="Logo" Title="Logo" SrcSet="/" Width="0" Height="0" Loading="Enums.Loading.ImageLoading.Eager" Sizes="" />
 
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>
+    <MainMenu />
+</header>
+
+<main>
+    @Body
+</main>
