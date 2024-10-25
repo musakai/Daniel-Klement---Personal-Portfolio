@@ -1,4 +1,4 @@
-﻿@using Daniel_Klement.Enums.Socials
+﻿@using Musakai.Enums.Socials
 
 <a href="@Href" target="_blank">
     <i class="@GetIconClass(SocialMediaType)"></i>
@@ -23,6 +23,10 @@
             SocialMedia.Twitter => "fab fa-twitter",
             SocialMedia.Instagram => "fab fa-instagram",
             SocialMedia.LinkedIn => "fab fa-linkedin-in",
+            SocialMedia.YouTube => "fab fa-youtube",
+            SocialMedia.OneX => "fab fa-1x",
+            SocialMedia.GuruShots => "fab fa-gurushots",
+            SocialMedia.SuperPatch => "fab fa-superpatch",
             _ => throw new ArgumentOutOfRangeException(nameof(icon), icon, null)
         };
     }

@@ -1,4 +1,4 @@
-using Daniel_Klement.Blazor;
+using Musakai.Blazor;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
