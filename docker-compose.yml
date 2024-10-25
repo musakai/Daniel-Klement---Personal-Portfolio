@@ -6,3 +6,4 @@ services:
       dockerfile: ./Musakai.Blazor/Dockerfile.Blazor
     ports:
       - "80:80"
+      - "443:443"
