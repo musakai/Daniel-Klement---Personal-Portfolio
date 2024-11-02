@@ -1,0 +1,3 @@
+﻿.image-slider-content[data-src] {
+    --background-image: attr(data-src url);
+}
