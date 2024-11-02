@@ -1,12 +1,12 @@
 ﻿<div class="image-slider">
     @foreach (var slide in Slides)
     {
-        <div class="image-slider-content" data-src="@slide.Src">
+        <div class="image-slider-content @(slide == ActiveSlide ? "visible" : "")" data-src="@slide.Src">
             @if (DisplayInfo(slide))
             {
                 <div class="slide-info">
-                    <h3>@(Title ?? slide.Title)</h3>
-                    <p>@(Description ?? slide.Description)</p>
+                    <h3>@(slide.Title ?? Title)</h3>
+                    <p>@(slide.Description ?? Description)</p>
                 </div>
             }
         </div>
@@ -31,6 +31,36 @@
     /// </summary>
     [Parameter, EditorRequired]
     public required List<ImageSliderContent> Slides { get; set; }
+
+    /// <summary>
+    /// Time in milliseconds for how long each image should be visible.
+    /// </summary>
+    [Parameter]
+    public int DisplayTime { get; set; } = 3000; // Default to 3 seconds
+
+    private ImageSliderContent? ActiveSlide { get; set; }
+    private int currentIndex = 0;
+    private Timer? timer;
+
+    protected override void OnInitialized()
+    {
+        if (Slides.Any())
+        {
+            ActiveSlide = Slides[0];
+        }
+
+        timer = new Timer(SwapSlides, null, DisplayTime, DisplayTime);
+    }
+
+    private void SwapSlides(object? state)
+    {
+        InvokeAsync(() =>
+        {
+            currentIndex = (currentIndex + 1) % Slides.Count;
+            ActiveSlide = Slides[currentIndex];
+            StateHasChanged();
+        });
+    }
 
     private bool DisplayInfo(ImageSliderContent slide) => !(string.IsNullOrEmpty(slide.Title) && string.IsNullOrEmpty(Title));
 }
