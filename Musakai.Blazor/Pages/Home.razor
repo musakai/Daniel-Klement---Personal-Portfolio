@@ -1,7 +1,15 @@
-﻿@page "/"
+﻿@using Musakai.Blazor.Components.Images.ImageSlider
+@page "/"
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<ImageSlider Title="Daniel Klement" Description="C#/.NET vývojář a fotograf" Slides="_slides" />
 
-Welcome to your new app.
+@code {
+    private List<ImageSliderContent> _slides = new List<ImageSliderContent>
+    {
+        new ImageSliderContent { Src = "image1.jpg"},
+        new ImageSliderContent { Src = "image2.jpg"},
+        new ImageSliderContent { Src = "image3.jpg"}
+    };
+}

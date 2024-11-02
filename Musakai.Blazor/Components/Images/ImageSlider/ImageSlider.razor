@@ -1,0 +1,36 @@
+﻿<div class="image-slider">
+    @foreach (var slide in Slides)
+    {
+        <div class="image-slider-content" data-src="@slide.Src">
+            @if (DisplayInfo(slide))
+            {
+                <div class="slide-info">
+                    <h3>@(Title ?? slide.Title)</h3>
+                    <p>@(Description ?? slide.Description)</p>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    /// <summary>
+    /// Global title for the slider.
+    /// </summary>
+    [Parameter]
+    public string? Title { get; set; }
+
+    /// <summary>
+    /// Global description for the slider.
+    /// </summary>
+    [Parameter]
+    public string? Description { get; set; }
+
+    /// <summary>
+    /// Slides for the slider.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required List<ImageSliderContent> Slides { get; set; }
+
+    private bool DisplayInfo(ImageSliderContent slide) => !(string.IsNullOrEmpty(slide.Title) && string.IsNullOrEmpty(Title));
+}
