@@ -1,11 +1,36 @@
 ﻿@using Musakai.Blazor.Components.Images.ImageSlider
 @page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Daniel Klement</PageTitle>
 
-<ImageSlider Title="Daniel Klement" Description="C#/.NET vývojář a fotograf" Slides="_slides" />
+<section id="presentation">
+    <ImageSlider Title="Daniel Klement" Description="C#/.NET vývojář a fotograf" Slides="_slides" />
+</section>
+<section id="about-me">
+    <h2>O mně</h2>
+    <Image Src="your-photo.jpg" Alt="Vaše fotka" Title="" Width="50px" Height="50px" Loading="Enums.Loading.ImageLoading.Auto" SrcSet="" Sizes="" />
+
+    <p>Ahoj, jsem Daniel, vášnivý <strong>foitograf</strong> a <strong>C#/.NET vývojář</strong>...</p>
+
+    <div class="fun-facts">
+        <h3>Zajímavosti</h3>
+        <ul>
+            <li>Vyvinul jsem [zmínka o pozoruhodném projektu].</li>
+            <li>Fotografování mě zavedlo do [zmínka o zajímavých místech].</li>
+        </ul>
+    </div>
+    <div class="testimonials">
+        <h3>Co říkají klienti</h3>
+        <p>"Daniel má oko pro detail jako nikdo jiný..." - Spokojený klient</p>
+    </div>
+    <div class="cta">
+        <p>Pojďme společně vytvořit něco krásného. <a href="#contact">Kontaktujte mě!</a></p>
+    </div>
+</section>
 
 @code {
+    // TODO: Replace link with Button. Need to create a Button components.
+
     private List<ImageSliderContent> _slides = new List<ImageSliderContent>
     {
         new ImageSliderContent { Src = "image1.jpg"},
