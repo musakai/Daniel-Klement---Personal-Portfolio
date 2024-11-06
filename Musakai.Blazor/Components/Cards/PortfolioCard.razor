@@ -1,0 +1,19 @@
+﻿<div class="card-portfolio" data-src="@Src">
+    <div class="card-portfolio-title">
+        @Title
+    </div>
+</div>
+
+@code {
+    /// <summary>
+    /// Image source in URI format
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Src { get; set; }
+
+    /// <summary>
+    /// Title of the card
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Title { get; set; }
+}

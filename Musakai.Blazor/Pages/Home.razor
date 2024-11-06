@@ -1,4 +1,5 @@
-﻿@using Musakai.Blazor.Components.Images.ImageSlider
+﻿@using Musakai.Blazor.Components.Cards
+@using Musakai.Blazor.Components.Images.ImageSlider
 @page "/"
 
 <PageTitle>Daniel Klement</PageTitle>
@@ -22,6 +23,14 @@
     <div class="cta">
         <p>Pojďme společně vytvořit něco krásného. <a href="#contact">Kontaktujte mě!</a></p>
     </div>
+</section>
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <PortfolioCard Src="" Title="Sport" />
+    <PortfolioCard Src="" Title="Příroda" />
+    <PortfolioCard Src="" Title="Portréty" />
+    <PortfolioCard Src="" Title="Street Fotografie" />
+    <PortfolioCard Src="" Title="Svatby" />
 </section>
 
 @code {
