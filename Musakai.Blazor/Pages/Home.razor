@@ -1,5 +1,6 @@
 ﻿@using Musakai.Blazor.Components.Cards
 @using Musakai.Blazor.Components.Images.ImageSlider
+@using System.ComponentModel.DataAnnotations
 @page "/"
 
 <PageTitle>Daniel Klement</PageTitle>
@@ -32,6 +33,39 @@
     <PortfolioCard Src="" Title="Street Fotografie" />
     <PortfolioCard Src="" Title="Svatby" />
 </section>
+<section id="contact">
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+        <p><strong>Email:</strong> example@example.com</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Address:</strong> 123 Example Street, City, Country</p>
+        <p><strong>Bank Account:</strong> 1234 5678 9012 3456</p>
+    </div>
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <EditForm Model="@contactModel" OnValidSubmit="@HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+            <div class="form-group">
+                <label for="name">Name</label>
+                <InputText id="name" class="form-control" @bind-Value="contactModel.Name" />
+                <ValidationMessage For="@(() => contactModel.Name)" />
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <InputText id="email" class="form-control" @bind-Value="contactModel.Email" />
+                <ValidationMessage For="@(() => contactModel.Email)" />
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <InputTextArea id="message" class="form-control" @bind-Value="contactModel.Message" />
+                <ValidationMessage For="@(() => contactModel.Message)" />
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </EditForm>
+    </div>
+</section>
+
 
 @code {
     // TODO: Replace link with Button. Need to create a Button components.
@@ -42,4 +76,20 @@
         new ImageSliderContent { Src = "image2.jpg"},
         new ImageSliderContent { Src = "image3.jpg"}
     };
+
+    private ContactModel contactModel = new ContactModel(); 
+    
+    private void HandleValidSubmit()
+    { 
+        // This method will send request to the server.
+    } 
+    public class ContactModel 
+    { 
+        [Required] 
+        public string? Name { get; set; } 
+        [Required, EmailAddress]
+        public string? Email { get; set; } 
+        [Required] 
+        public string? Message { get; set; } 
+    }
 }
