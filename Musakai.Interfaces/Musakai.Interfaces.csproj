@@ -11,4 +11,8 @@
     <WarningsAsErrors>CS1591</WarningsAsErrors>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Musakai.Shared\Musakai.Shared.csproj" />
+  </ItemGroup>
+
 </Project>

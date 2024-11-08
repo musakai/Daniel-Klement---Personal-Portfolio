@@ -18,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Musakai.Enums\Musakai.Enums.csproj" />
+    <ProjectReference Include="..\Musakai.Interfaces\Musakai.Interfaces.csproj" />
+    <ProjectReference Include="..\Musakai.Shared\Musakai.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
