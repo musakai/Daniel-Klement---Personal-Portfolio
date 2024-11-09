@@ -1,0 +1,46 @@
+<div class="blog-card">
+    <div class="card-header">
+        <div class="card-image" data-src="@ImageSrc">
+            <div class="card-overlay">
+                <h5 class="card-title">@Title</h5>
+                <p class="card-text text-muted">@PublicationDate.ToString("MMMM dd, yyyy")</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <p class="card-text">@ShortDescription</p>
+        <a href="@Link" class="btn btn-primary read-more-button" target="_blank">Read More</a>
+    </div>
+</div>
+
+@code {
+    /// <summary>
+    /// Title of the blog post.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string Title { get; set; }
+
+    /// <summary>
+    /// Image source of the blog post.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string ImageSrc { get; set; }
+
+    /// <summary>
+    /// Link to the blog post.
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required Uri Link { get; set; }
+
+    /// <summary>
+    /// Date of publication
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required DateTime PublicationDate { get; set; }
+
+    /// <summary>
+    /// Short description of the Blog post
+    /// </summary>
+    [Parameter, EditorRequired]
+    public required string ShortDescription { get; set; }
+}
