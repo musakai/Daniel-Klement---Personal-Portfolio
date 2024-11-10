@@ -33,8 +33,8 @@ public class ContactController : ControllerBase
     [HttpPost("send-email")]
     [Consumes("application/json")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    [ProducesResponseType(typeof(BadRequestErrorResponse), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(typeof(InternalServerErrorResponse), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> SendContactMessage([FromBody] ContactRequest request)
     {
         if (!ModelState.IsValid)
