@@ -3,6 +3,8 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using Musakai.Shared.Api.V1.Contact.Requests;
+using Musakai.Shared.Api.ErrorResponses.E400;
+using Musakai.Shared.Api.ErrorResponses.E500;
 
 /// <summary>
 /// Controller for handling contact messages.
@@ -37,7 +39,10 @@ public class ContactController : ControllerBase
     {
         if (!ModelState.IsValid)
         {
-            return BadRequest(ModelState);
+            return BadRequest(new BadRequestErrorResponse
+            {
+                Details = ModelState.ToString()!
+            });
         }
 
         try
@@ -48,7 +53,10 @@ public class ContactController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "");
-            return StatusCode(500, "");
+            return StatusCode(500, new InternalServerErrorResponse
+            {
+                Details = ex.Message
+            });
         }
     }
 }
