@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.Interfaces", "Musak
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.Shared", "Musakai.Shared\Musakai.Shared.csproj", "{8BE6EBFA-6A23-42E5-8FA7-9D67815FD435}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musakai.API", "Musakai.API\Musakai.API.csproj", "{0F34E858-145C-4CD9-BA77-D59D1F0CBCA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8BE6EBFA-6A23-42E5-8FA7-9D67815FD435}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BE6EBFA-6A23-42E5-8FA7-9D67815FD435}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BE6EBFA-6A23-42E5-8FA7-9D67815FD435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F34E858-145C-4CD9-BA77-D59D1F0CBCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F34E858-145C-4CD9-BA77-D59D1F0CBCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F34E858-145C-4CD9-BA77-D59D1F0CBCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F34E858-145C-4CD9-BA77-D59D1F0CBCA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

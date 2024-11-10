@@ -1,0 +1,6 @@
+@Musakai.API_HostAddress = http://localhost:5081
+
+GET {{Musakai.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
