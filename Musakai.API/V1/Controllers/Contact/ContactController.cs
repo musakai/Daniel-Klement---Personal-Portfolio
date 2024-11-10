@@ -1,14 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Musakai.Shared.Api.Contact.Requests;
+﻿namespace Musakai.API.V1.Controllers.Contact;
 
-namespace Musakai.API.Controllers.Contact;
+using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
+using Musakai.Shared.Api.V1.Contact.Requests;
 
+/// <summary>
+/// Controller for handling contact messages.
+/// </summary>
 [ApiController]
-[Route("v1/[controller]")]
+[ApiVersion(1.0)]
+[Produces("application/json")]
+[Route("/v{version:apiVersion}/[controller]")]
 public class ContactController : ControllerBase
 {
     private readonly ILogger<ContactController> _logger;
-    /// <summary>
+
+    /// <summary> 
     /// Constructor for the ContactController.
     /// </summary>
     public ContactController(ILogger<ContactController> logger)
@@ -22,6 +29,10 @@ public class ContactController : ControllerBase
     /// <param name="request">The contact request containing the message details.</param>
     /// <returns>Action result indicating the outcome of the operation.</returns>
     [HttpPost("send-email")]
+    [Consumes("application/json")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> SendContactMessage([FromBody] ContactRequest request)
     {
         if (!ModelState.IsValid)

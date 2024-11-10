@@ -1,4 +1,4 @@
-﻿using Musakai.Shared.Api.Contact.Requests;
+﻿using Musakai.Shared.Api.V1.Contact.Requests;
 
 namespace Musakai.Interfaces.ApiServices;
 

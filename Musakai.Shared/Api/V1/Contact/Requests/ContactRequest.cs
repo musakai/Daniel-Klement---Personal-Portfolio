@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿namespace Musakai.Shared.Api.V1.Contact.Requests;
 
-namespace Musakai.Shared.Api.Contact.Requests;
+using System.ComponentModel.DataAnnotations;
 
 /// <summary>
 /// Request for sending a contact message to the Photographer

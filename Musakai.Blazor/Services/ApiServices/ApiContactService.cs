@@ -1,8 +1,8 @@
-﻿using Musakai.Interfaces.ApiServices;
-using Musakai.Shared.Api.Contact.Requests;
-using System.Net.Http.Json;
+﻿namespace Musakai.Blazor.Services.ApiServices;
 
-namespace Musakai.Blazor.Services.ApiServices;
+using Musakai.Interfaces.ApiServices;
+using Musakai.Shared.Api.V1.Contact.Requests;
+using System.Net.Http.Json;
 
 /// <summary>
 /// Service for sending contact messages to the Photographer
