@@ -3,7 +3,7 @@
 /// <summary>
 /// Error response for internal server errors
 /// </summary>
-public class InternalServerErrorResponse : BaseErrorResponse
+public record class InternalServerErrorResponse : BaseErrorResponse
 {
     /// <summary>
     /// Status code of the error

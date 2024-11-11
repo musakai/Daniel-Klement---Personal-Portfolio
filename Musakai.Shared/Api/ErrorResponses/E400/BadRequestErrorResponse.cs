@@ -3,7 +3,7 @@
 /// <summary>
 /// Error response for bad requests
 /// </summary>
-public class BadRequestErrorResponse : BaseErrorResponse
+public record class BadRequestErrorResponse : BaseErrorResponse
 {
     /// <summary>
     /// Status code of the error
