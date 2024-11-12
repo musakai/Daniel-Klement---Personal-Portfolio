@@ -1,6 +1,10 @@
 ﻿@using Musakai.Blazor.Components.Cards
 @using Musakai.Blazor.Components.Images.ImageSlider
 @using System.ComponentModel.DataAnnotations
+@using Musakai.Shared.Api.V1.Contact.Requests
+
+@inject Musakai.Interfaces.Blazor.ApiServices.IApiContactService ApiContactService
+
 @page "/"
 
 <PageTitle>Daniel Klement</PageTitle>
@@ -46,28 +50,39 @@
             <DataAnnotationsValidator />
             <ValidationSummary />
             <div class="form-group">
-                <label for="name">Name</label>
-                <InputText id="name" class="form-control" @bind-Value="contactModel.Name" />
+                <label for="firstName">Jméno</label>
+                <InputText id="firstName" class="form-control" @bind-Value="contactModel.Name" />
                 <ValidationMessage For="@(() => contactModel.Name)" />
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="lastName">Příjmení</label>
+                <InputText id="lastName" class="form-control" @bind-Value="contactModel.Surname" />
+                <ValidationMessage For="@(() => contactModel.Surname)" />
+            </div>
+            <div class="form-group">
+                <label for="email">E-mailová adresa</label>
                 <InputText id="email" class="form-control" @bind-Value="contactModel.Email" />
                 <ValidationMessage For="@(() => contactModel.Email)" />
             </div>
             <div class="form-group">
-                <label for="message">Message</label>
+                <label for="phone">Telefonní číslo</label>
+                <InputText id="phone" class="form-control" @bind-Value="contactModel.Phone" />
+                <ValidationMessage For="@(() => contactModel.Phone)" />
+            </div>
+            <div class="form-group">
+                <label for="message">Zpráva</label>
                 <InputTextArea id="message" class="form-control" @bind-Value="contactModel.Message" />
                 <ValidationMessage For="@(() => contactModel.Message)" />
             </div>
-            <button type="submit" class="btn btn-primary">Send</button>
+            <button type="submit" class="btn btn-primary">Odeslat</button>
         </EditForm>
     </div>
 </section>
 
 
 @code {
-    // TODO: Replace link with Button. Need to create a Button components.
+    // TODO (#15): Replace link with Button. Need to create a Button components.
+    // This issue is tracked on GitHub: https://github.com/musakai/Daniel-Klement---Personal-Portfolio/issues/15
 
     private List<ImageSliderContent> _slides = new List<ImageSliderContent>
     {
@@ -76,21 +91,19 @@
         new ImageSliderContent { Src = "image3.jpg"}
     };
 
-    private ContactModel contactModel = new ContactModel(); 
-    
-    private void HandleValidSubmit()
-    { 
-        // This method will send request to the server.
-        throw new NotImplementedException();
-    } 
+    private ContactRequest contactModel = new();
 
-    public class ContactModel 
-    { 
-        [Required] 
-        public string? Name { get; set; } 
-        [Required, EmailAddress]
-        public string? Email { get; set; } 
-        [Required] 
-        public string? Message { get; set; } 
+    // TODO (#20): Handle exceptions and Messages (Error / Success)
+    // This issue is tracked on GitHub: https://github.com/musakai/Daniel-Klement---Personal-Portfolio/issues/20
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            await ApiContactService.SendContactMessage(contactModel);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
     }
 }

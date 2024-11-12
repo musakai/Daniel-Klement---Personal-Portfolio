@@ -1,6 +1,6 @@
 ﻿namespace Musakai.Blazor.Services.ApiServices;
 
-using Musakai.Interfaces.ApiServices;
+using Musakai.Interfaces.Blazor.ApiServices;
 using Musakai.Shared.Api.V1.Contact.Requests;
 using System.Net.Http.Json;
 

@@ -1,6 +1,6 @@
 ﻿using Musakai.Shared.Api.V1.Contact.Requests;
 
-namespace Musakai.Interfaces.ApiServices;
+namespace Musakai.Interfaces.Blazor.ApiServices;
 
 /// <summary>
 /// Interface for sending contact messages to the Photographer.

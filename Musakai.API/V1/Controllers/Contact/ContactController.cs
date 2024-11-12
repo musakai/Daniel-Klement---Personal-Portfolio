@@ -47,7 +47,8 @@ public class ContactController : ControllerBase
 
         try
         {
-            // Send the contact message here
+            // TODO (#21): Implement the IEmailService and use it to send the contact message
+            // This issue is tracked on GitHub: https://github.com/musakai/Daniel-Klement---Personal-Portfolio/issues/21
             return Ok("");
         }
         catch (Exception ex)

@@ -1,7 +1,7 @@
 ﻿namespace Musakai.Blazor.Configuration;
 
 using Musakai.Blazor.Services.ApiServices;
-using Musakai.Interfaces.ApiServices;
+using Musakai.Interfaces.Blazor.ApiServices;
 
 /// <summary>
 /// Class to register services into the Webapplication

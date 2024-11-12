@@ -3,7 +3,7 @@
 /// <summary>
 /// Base error response for the API
 /// </summary>
-public class BaseErrorResponse
+public record class BaseErrorResponse
 {
     /// <summary>
     /// Detailed Error Message
