@@ -1,17 +1,17 @@
-﻿namespace Musakai.Shared.Api.ErrorResponses.E500;
+﻿namespace Musakai.Shared.Api.ErrorResponses;
 
 /// <summary>
 /// Error response for internal server errors
 /// </summary>
-public record class InternalServerErrorResponse : BaseErrorResponse
+public sealed record class InternalServerErrorResponse(string details) : BaseErrorResponse(details)
 {
     /// <summary>
     /// Status code of the error
     /// </summary>
-    public int StatusCode { get; set; } = 500;
+     public override int StatusCode { get; init; } = 500;
 
     /// <summary>
     /// Basic Message of the error
     /// </summary>
-    public string Message { get; set; } = "Internal Server Error";
+    public override string Message { get; init; } = "Internal Server Error";
 }

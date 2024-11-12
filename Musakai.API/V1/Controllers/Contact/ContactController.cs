@@ -3,8 +3,7 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using Musakai.Shared.Api.V1.Contact.Requests;
-using Musakai.Shared.Api.ErrorResponses.E400;
-using Musakai.Shared.Api.ErrorResponses.E500;
+using Musakai.Shared.Api.ErrorResponses;
 
 /// <summary>
 /// Controller for handling contact messages.
@@ -13,17 +12,9 @@ using Musakai.Shared.Api.ErrorResponses.E500;
 [ApiVersion(1.0)]
 [Produces("application/json")]
 [Route("/v{version:apiVersion}/[controller]")]
-public class ContactController : ControllerBase
+public sealed class ContactController(ILogger<ContactController> logger) : ControllerBase
 {
-    private readonly ILogger<ContactController> _logger;
-
-    /// <summary> 
-    /// Constructor for the ContactController.
-    /// </summary>
-    public ContactController(ILogger<ContactController> logger)
-    {
-        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-    }
+    private readonly ILogger<ContactController> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
     /// <summary>
     /// Endpoint to send a contact message to the photographer.
@@ -39,10 +30,7 @@ public class ContactController : ControllerBase
     {
         if (!ModelState.IsValid)
         {
-            return BadRequest(new BadRequestErrorResponse
-            {
-                Details = ModelState.ToString()!
-            });
+            return BadRequest(new BadRequestErrorResponse(ModelState.ToString()!));
         }
 
         try
@@ -54,10 +42,7 @@ public class ContactController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "");
-            return StatusCode(500, new InternalServerErrorResponse
-            {
-                Details = ex.Message
-            });
+            return StatusCode(500, new InternalServerErrorResponse(ex.Message));
         }
     }
 }

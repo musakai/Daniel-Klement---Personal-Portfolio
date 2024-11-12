@@ -1,17 +1,17 @@
-﻿namespace Musakai.Shared.Api.ErrorResponses.E400;
+﻿namespace Musakai.Shared.Api.ErrorResponses;
 
 /// <summary>
 /// Error response for bad requests
 /// </summary>
-public record class BadRequestErrorResponse : BaseErrorResponse
+public sealed record class BadRequestErrorResponse(string details) : BaseErrorResponse(details)
 {
     /// <summary>
     /// Status code of the error
     /// </summary>
-    public int StatusCode { get; set; } = 400;
+    public override int StatusCode { get; init; } = 400;
 
     /// <summary>
     /// Basic Message of the error
     /// </summary>
-    public string Message { get; set; } = "Bad Request";
+    public override string Message { get; init; } = "Bad Request";
 }
