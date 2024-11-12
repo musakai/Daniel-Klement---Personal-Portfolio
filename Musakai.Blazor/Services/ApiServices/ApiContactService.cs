@@ -7,7 +7,7 @@ using System.Net.Http.Json;
 /// <summary>
 /// Service for sending contact messages to the Photographer
 /// </summary>
-public class ApiContactService : BaseApiService, IApiContactService
+public sealed class ApiContactService : BaseApiService, IApiContactService
 {
     private readonly Uri _endpointV1;
 
@@ -17,7 +17,7 @@ public class ApiContactService : BaseApiService, IApiContactService
     /// <param name="httpClient">HttpClient to use for sending requests</param>
     /// <param name="configuration">Configuration to use for the base endpoint</param>
     public ApiContactService(HttpClient httpClient, IConfiguration configuration)
-        : base(httpClient, configuration) 
+        : base(httpClient, configuration)
     {
         _endpointV1 = new Uri(_baseEndpoint, "v1/contact");
     }
@@ -29,7 +29,7 @@ public class ApiContactService : BaseApiService, IApiContactService
     /// <returns>Task representing the completion of the request</returns>
     public async Task SendContactMessage(ContactRequest request)
     {
-        var response = await _httpClient.PostAsJsonAsync(new Uri(_endpointV1,"send-email"), request);
+        var response = await _httpClient.PostAsJsonAsync(new Uri(_endpointV1, "send-email"), request);
         response.EnsureSuccessStatusCode();
     }
 }
