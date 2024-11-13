@@ -1,18 +1,14 @@
-﻿ <Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RootNamespace>Musakai.Interfaces</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <!-- Required documentation -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <WarningsAsErrors>CS1591</WarningsAsErrors>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Musakai.Shared\Musakai.Shared.csproj" />
   </ItemGroup>
-
 </Project>
