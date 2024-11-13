@@ -1,14 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <RootNamespace>Musakai.Shared</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-
     <!-- Required documentation -->
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <WarningsAsErrors>CS1591</WarningsAsErrors>
   </PropertyGroup>
-
 </Project>
