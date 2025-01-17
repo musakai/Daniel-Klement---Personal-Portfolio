@@ -1,0 +1,30 @@
+﻿@using Musakai.Blazor.Components.Links
+
+<footer>
+    <p>&copy; 2024 - Daniel Klement - Všechna práva vyhrazena.</p>
+
+    @foreach (var socialMediaDto in _socialMediaDtos)
+    {
+        <SocialMediaLink Href="@socialMediaDto.Href" SocialMediaType="@socialMediaDto.SocialMediaType" />
+    }
+</footer>
+
+@code {
+    private List<SocialMediaDto> _socialMediaDtos = new List<SocialMediaDto>
+    {
+        new SocialMediaDto { Href = "https://www.youtube.com", SocialMediaType = Enums.Socials.SocialMedia.YouTube },
+        new SocialMediaDto { Href = "https://www.facebook.com", SocialMediaType = Enums.Socials.SocialMedia.Facebook },
+        new SocialMediaDto { Href = "https://www.instagram.com", SocialMediaType = Enums.Socials.SocialMedia.Instagram },
+        new SocialMediaDto { Href = "https://x.com", SocialMediaType = Enums.Socials.SocialMedia.Twitter },
+        new SocialMediaDto { Href = "https://www.linkedin.com", SocialMediaType = Enums.Socials.SocialMedia.LinkedIn },
+        new SocialMediaDto { Href = "https://www.gurushots.com", SocialMediaType = Enums.Socials.SocialMedia.GuruShots },
+        new SocialMediaDto { Href = "https://www.1x.com", SocialMediaType = Enums.Socials.SocialMedia.OneX },
+        new SocialMediaDto { Href = "https://danielklement.superpatch.com", SocialMediaType = Enums.Socials.SocialMedia.SuperPatch }
+    };
+
+    private sealed record class SocialMediaDto
+    {
+        public required string Href { get; init; }
+        public required Enums.Socials.SocialMedia SocialMediaType { get; init; }
+    }
+}
