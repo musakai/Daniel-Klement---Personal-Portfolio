@@ -1,3 +1,7 @@
+/// <summary>
+/// Fixing error
+/// </summary>
+// HOTFIX: Fixed XML program.cs error
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
